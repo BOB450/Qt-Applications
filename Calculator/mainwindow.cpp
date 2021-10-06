@@ -22,16 +22,19 @@ MainWindow::~MainWindow()
 
 void MainWindow::pushButton()
 {
-    float x,y,a;
-    QLineEdit lable1;
-    QLineEdit lable2;
 
-    a = x * y;
-    QString s = QString::number(a);
-    QString b = "The Answer is: ";
-    QString ans = b + s;
+  QString  textvalue = ui->lineEdit->displayText();
+  QString  textvalue2 = ui->lineEdit_2->displayText();
+
+
+
+    double b = textvalue.toDouble();
+    double s = textvalue2.toDouble();
+    double ansb = b + s;
+    QString ans = QString().asprintf("%0.4f", ansb);
+    QString v = "The Answer is: ";
     QMessageBox msgBox;
-    msgBox.setText( ans );
+    msgBox.setText( ans);
     msgBox.exec();
 }
 
